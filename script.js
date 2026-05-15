@@ -742,7 +742,7 @@ navLinks.querySelectorAll("a").forEach(link => {
 function renderCities() {
   const grid = document.getElementById("citiesGrid");
   grid.innerHTML = destinations.map((d, i) => `
-    <div class="city-card reveal" style="transition-delay:${(i % 3) * 0.1}s">
+    <div class="city-card reveal visible" style="transition-delay:${(i % 3) * 0.1}s">
       <div class="city-card-img">
         <img src="${d.image}" alt="${d.name}" loading="lazy" />
         <div class="city-season-badge">${t("card-best")} ${d.bestSeason}</div>
