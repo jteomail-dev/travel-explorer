@@ -28,7 +28,7 @@ npx http-server . -p 3000 -o
 - **Weather Widget** — Live weather lookup via OpenWeather API (free API key required)
 - **Enquiry Form** — Validated contact form with localStorage submission storage
 - **Responsive Design** — Mobile, tablet, and desktop layouts
-- **Editorial Style** — Playfair Display + Inter typography, gold accent palette, cinematic Unsplash imagery
+- **Gen Z Dark Luxury Design** — Syne + Space Grotesk typography, muted mauve/slate/gold palette, glassmorphism cards, dark cinematic aesthetic
 
 ## Weather API Setup
 
@@ -68,7 +68,7 @@ const OPENWEATHER_API_KEY = "YOUR_API_KEY_HERE";
 ## Tech Stack
 
 - HTML5, CSS3, Vanilla JavaScript (ES6+)
-- Google Fonts — Playfair Display, Inter
+- Google Fonts — Syne (display), Space Grotesk (body)
 - Unsplash (direct image URLs, no API key needed)
 - OpenWeather API (optional, for live weather)
 - Browser localStorage for packing checklist, itinerary, and enquiry persistence
