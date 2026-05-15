@@ -4,6 +4,12 @@
 
 A modern single-page travel guide website for curated city guides across Asia and beyond. Built with pure HTML, CSS, and JavaScript — no frameworks, no backend.
 
+**Live Site:** [https://jteomail-dev.github.io/travel-explorer/](https://jteomail-dev.github.io/travel-explorer/)
+
+## Preview
+
+![Travel Explorer Screenshot](screenshot.png)
+
 ## Live Preview
 
 Open `index.html` in a browser, or serve locally:

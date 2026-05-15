@@ -30,6 +30,7 @@ jobs:
           cp index.html _site/
           cp style.css _site/
           cp script.js _site/
+          [ -f screenshot.png ] && cp screenshot.png _site/ || true
           touch _site/.nojekyll
 
       - name: Setup Pages
