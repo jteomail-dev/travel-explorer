@@ -302,6 +302,418 @@ const packingData = [
 ];
 
 /* ============================================================
+   TRANSLATION SYSTEM
+   ============================================================ */
+const SUPPORTED_LANGS = [
+  { code: "en", flag: "🇬🇧", label: "EN", name: "English" },
+  { code: "zh", flag: "🇨🇳", label: "ZH", name: "中文" },
+  { code: "ja", flag: "🇯🇵", label: "JA", name: "日本語" },
+  { code: "ko", flag: "🇰🇷", label: "KO", name: "한국어" },
+  { code: "th", flag: "🇹🇭", label: "TH", name: "ไทย" },
+  { code: "vi", flag: "🇻🇳", label: "VI", name: "Tiếng Việt" },
+];
+
+const uiTranslations = {
+  en: {
+    "nav-home": "Home", "nav-guides": "Guides", "nav-cities": "Cities",
+    "nav-tools": "Travel Tools", "nav-weather": "Weather", "nav-safety": "Safety", "nav-enquiry": "Enquiry",
+    "hero-eyebrow": "Asia's Premier Travel Guide",
+    "hero-headline": "We went, so you know<br>where to go.",
+    "hero-sub": "Curated travel guides with real prices, realistic itineraries, airport tips, safety notes, weather insights, and local recommendations.",
+    "hero-cta1": "Read Latest Guide", "hero-cta2": "Send Enquiry", "hero-scroll": "Scroll to explore",
+    "guides-label": "Latest Guides",
+    "guides-title": "Hand-picked destinations,<br>real traveller insights",
+    "guides-sub": "Our editors have visited every city on this list — prices, itineraries, and tips are based on actual trips.",
+    "featured-badge": "Editor's Pick",
+    "meta-flight": "Flight from SG", "meta-budget": "Daily Budget", "meta-season": "Best Season",
+    "btn-read-full": "Read Full Guide",
+    "cities-label": "Destinations", "cities-title": "12 Cities Worth Every Hour of the Flight",
+    "btn-view-guide": "View Guide", "card-flight": "Flight (SG)", "card-budget": "Daily Budget", "card-best": "Best:",
+    "tools-label": "Travel Tools", "tools-title": "Plan smarter, travel better",
+    "budget-tool-title": "Trip Budget Calculator",
+    "budget-tool-desc": "Estimate your total trip cost in SGD before you book.",
+    "budget-dest-label": "Destination", "budget-dest-ph": "Select destination",
+    "budget-travellers-label": "Number of Travellers", "budget-travellers-ph": "e.g. 2",
+    "budget-days-label": "Number of Days", "budget-days-ph": "e.g. 5",
+    "budget-daily-label": "Daily Budget per Person (SGD)", "budget-daily-ph": "e.g. 200",
+    "btn-calculate": "Calculate",
+    "packing-tool-title": "Packing Checklist",
+    "packing-tool-desc": "Tick off items as you pack. Your progress is saved in the browser.",
+    "itin-tool-title": "Itinerary Planner",
+    "itin-tool-desc": "Build your day-by-day trip plan and reference it anytime.",
+    "itin-day-label": "Day", "itin-day-ph": "1", "itin-time-label": "Time",
+    "itin-activity-label": "Activity", "itin-activity-ph": "e.g. Visit Senso-ji Temple",
+    "itin-notes-label": "Notes", "itin-notes-ph": "Optional notes",
+    "btn-add-entry": "Add Entry", "btn-clear-all": "Clear All",
+    "itin-th-day": "Day", "itin-th-time": "Time", "itin-th-activity": "Activity", "itin-th-notes": "Notes",
+    "itin-day-prefix": "Day",
+    "weather-label": "Weather", "weather-title": "Check the forecast before you fly",
+    "weather-sub": "Powered by OpenWeather. Add your free API key to activate live weather lookups.",
+    "weather-city-ph": "Enter city name, e.g. Tokyo", "btn-check-weather": "Check Weather",
+    "weather-humidity": "Humidity", "weather-wind": "Wind", "weather-feels": "Feels like",
+    "safety-label": "Travel Safety", "safety-title": "Travel smart, stay safe",
+    "safety-sub": "Our editors have compiled essential safety information for every destination on this list.",
+    "safety-ins-h": "Travel Insurance", "safety-health-h": "Health Precautions",
+    "safety-scam-h": "Scam Awareness", "safety-emergency-h": "Emergency Numbers",
+    "safety-solo-h": "Solo Travel Tips", "safety-levels-h": "Destination Safety Levels",
+    "enquiry-label": "Get in Touch", "enquiry-title": "Plan your perfect trip with us",
+    "enquiry-sub": "Tell us where you want to go. Our travel editors will put together a personalised guide tailored to your dates and budget.",
+    "enquiry-p1": "✓ Response within 24 hours", "enquiry-p2": "✓ Custom itinerary suggestions", "enquiry-p3": "✓ No obligation, no spam",
+    "form-name": "Full Name", "form-email": "Email", "form-phone": "Phone",
+    "form-name-ph": "Jane Smith", "form-email-ph": "jane@email.com", "form-phone-ph": "+65 9123 4567",
+    "form-dest": "Destination of Interest", "form-dest-ph": "Select a destination",
+    "form-date": "Travel Date", "form-travellers": "Number of Travellers", "form-travellers-ph": "2",
+    "form-message": "Message", "form-message-ph": "Tell us about your trip plans, interests, or any questions...",
+    "btn-send": "Send Enquiry",
+    "form-success": "Enquiry sent!", "form-success-msg": "Thank you! We'll be in touch within 24 hours.",
+    "footer-tagline": "We went, so you know where to go.",
+  },
+
+  zh: {
+    "nav-home": "首页", "nav-guides": "指南", "nav-cities": "城市",
+    "nav-tools": "旅行工具", "nav-weather": "天气", "nav-safety": "安全", "nav-enquiry": "询问",
+    "hero-eyebrow": "亚洲首席旅游指南",
+    "hero-headline": "我们亲身前往，<br>让你知道该去哪里。",
+    "hero-sub": "精心策划的旅游指南，包含真实价格、实际行程、机场贴士、安全须知、天气洞察及本地推荐。",
+    "hero-cta1": "阅读最新指南", "hero-cta2": "发送询问", "hero-scroll": "滚动探索",
+    "guides-label": "最新指南",
+    "guides-title": "精心挑选的目的地，<br>真实旅行者见解",
+    "guides-sub": "我们的编辑亲身到访此列表上的每一座城市——价格、行程和攻略均基于实际旅行。",
+    "featured-badge": "编辑推荐",
+    "meta-flight": "新加坡出发航班", "meta-budget": "每日预算", "meta-season": "最佳季节",
+    "btn-read-full": "阅读完整指南",
+    "cities-label": "目的地", "cities-title": "12座值得飞行每一小时的城市",
+    "btn-view-guide": "查看指南", "card-flight": "航班（新加坡）", "card-budget": "每日预算", "card-best": "最佳：",
+    "tools-label": "旅行工具", "tools-title": "更智慧地计划，更好地旅行",
+    "budget-tool-title": "旅行预算计算器",
+    "budget-tool-desc": "在预订前估算您的总旅行费用（新元）。",
+    "budget-dest-label": "目的地", "budget-dest-ph": "选择目的地",
+    "budget-travellers-label": "旅行人数", "budget-travellers-ph": "例如 2",
+    "budget-days-label": "天数", "budget-days-ph": "例如 5",
+    "budget-daily-label": "每人每日预算（新元）", "budget-daily-ph": "例如 200",
+    "btn-calculate": "计算",
+    "packing-tool-title": "打包清单",
+    "packing-tool-desc": "打包时逐项勾选。您的进度将保存在浏览器中。",
+    "itin-tool-title": "行程规划器",
+    "itin-tool-desc": "制定您的逐日行程并随时参考。",
+    "itin-day-label": "天", "itin-day-ph": "1", "itin-time-label": "时间",
+    "itin-activity-label": "活动", "itin-activity-ph": "例如：参观浅草寺",
+    "itin-notes-label": "备注", "itin-notes-ph": "可选备注",
+    "btn-add-entry": "添加条目", "btn-clear-all": "清除所有",
+    "itin-th-day": "天", "itin-th-time": "时间", "itin-th-activity": "活动", "itin-th-notes": "备注",
+    "itin-day-prefix": "第",
+    "weather-label": "天气", "weather-title": "飞行前查看天气预报",
+    "weather-sub": "由OpenWeather驱动。添加您的免费API密钥以启用实时天气查询。",
+    "weather-city-ph": "输入城市名称，例如 东京", "btn-check-weather": "查看天气",
+    "weather-humidity": "湿度", "weather-wind": "风速", "weather-feels": "体感温度",
+    "safety-label": "旅行安全", "safety-title": "智慧旅行，保持安全",
+    "safety-sub": "我们的编辑为此列表上的每个目的地汇编了基本安全信息。",
+    "safety-ins-h": "旅行保险", "safety-health-h": "健康预防措施",
+    "safety-scam-h": "防诈骗意识", "safety-emergency-h": "紧急电话号码",
+    "safety-solo-h": "独自旅行贴士", "safety-levels-h": "目的地安全等级",
+    "enquiry-label": "联系我们", "enquiry-title": "和我们一起规划您的完美旅行",
+    "enquiry-sub": "告诉我们您想去哪里。我们的旅游编辑将根据您的日期和预算制定个性化指南。",
+    "enquiry-p1": "✓ 24小时内回复", "enquiry-p2": "✓ 定制行程建议", "enquiry-p3": "✓ 无需承诺，无垃圾邮件",
+    "form-name": "全名", "form-email": "电子邮件", "form-phone": "电话",
+    "form-name-ph": "张三", "form-email-ph": "zhang@email.com", "form-phone-ph": "+65 9123 4567",
+    "form-dest": "感兴趣的目的地", "form-dest-ph": "选择目的地",
+    "form-date": "出行日期", "form-travellers": "旅行人数", "form-travellers-ph": "2",
+    "form-message": "留言", "form-message-ph": "告诉我们您的旅行计划、兴趣或任何问题...",
+    "btn-send": "发送询问",
+    "form-success": "询问已发送！", "form-success-msg": "谢谢！我们将在24小时内与您联系。",
+    "footer-tagline": "我们亲身前往，让你知道该去哪里。",
+  },
+
+  ja: {
+    "nav-home": "ホーム", "nav-guides": "ガイド", "nav-cities": "都市",
+    "nav-tools": "旅行ツール", "nav-weather": "天気", "nav-safety": "安全", "nav-enquiry": "お問い合わせ",
+    "hero-eyebrow": "アジア最高の旅行ガイド",
+    "hero-headline": "私たちが行ったから、<br>あなたはどこへ行けばいいかわかる。",
+    "hero-sub": "実際の価格、現実的な旅程、空港のヒント、安全情報、天気の洞察、地元のおすすめを網羅したキュレーション済み旅行ガイド。",
+    "hero-cta1": "最新ガイドを読む", "hero-cta2": "お問い合わせ", "hero-scroll": "スクロールして探索",
+    "guides-label": "最新ガイド",
+    "guides-title": "厳選された目的地、<br>リアルな旅行者の情報",
+    "guides-sub": "編集部がこのリストのすべての都市を実際に訪れています — 価格、旅程、ヒントはすべて実際の旅行に基づいています。",
+    "featured-badge": "編集部のおすすめ",
+    "meta-flight": "SG発フライト", "meta-budget": "1日の予算", "meta-season": "ベストシーズン",
+    "btn-read-full": "全ガイドを読む",
+    "cities-label": "目的地", "cities-title": "フライトの時間に見合う12都市",
+    "btn-view-guide": "ガイドを見る", "card-flight": "フライト（SG）", "card-budget": "1日の予算", "card-best": "ベスト：",
+    "tools-label": "旅行ツール", "tools-title": "もっと賢く計画し、より良い旅を",
+    "budget-tool-title": "旅行予算計算機",
+    "budget-tool-desc": "予約前にSGDでの総旅行コストを見積もりましょう。",
+    "budget-dest-label": "目的地", "budget-dest-ph": "目的地を選択",
+    "budget-travellers-label": "旅行者数", "budget-travellers-ph": "例：2",
+    "budget-days-label": "日数", "budget-days-ph": "例：5",
+    "budget-daily-label": "1人1日の予算（SGD）", "budget-daily-ph": "例：200",
+    "btn-calculate": "計算する",
+    "packing-tool-title": "荷造りチェックリスト",
+    "packing-tool-desc": "荷造りしながらアイテムをチェックオフ。進捗はブラウザに保存されます。",
+    "itin-tool-title": "旅程プランナー",
+    "itin-tool-desc": "日程ごとの旅行プランを作成していつでも参照できます。",
+    "itin-day-label": "日", "itin-day-ph": "1", "itin-time-label": "時刻",
+    "itin-activity-label": "アクティビティ", "itin-activity-ph": "例：浅草寺を訪問",
+    "itin-notes-label": "メモ", "itin-notes-ph": "任意のメモ",
+    "btn-add-entry": "エントリーを追加", "btn-clear-all": "すべてクリア",
+    "itin-th-day": "日", "itin-th-time": "時刻", "itin-th-activity": "アクティビティ", "itin-th-notes": "メモ",
+    "itin-day-prefix": "Day",
+    "weather-label": "天気", "weather-title": "フライト前に天気予報を確認",
+    "weather-sub": "OpenWeatherが提供。無料のAPIキーを追加してリアルタイム天気検索を有効にしてください。",
+    "weather-city-ph": "都市名を入力（例：東京）", "btn-check-weather": "天気を確認",
+    "weather-humidity": "湿度", "weather-wind": "風速", "weather-feels": "体感温度",
+    "safety-label": "旅行の安全", "safety-title": "賢く旅して安全に",
+    "safety-sub": "編集部がこのリストのすべての目的地の重要な安全情報をまとめています。",
+    "safety-ins-h": "旅行保険", "safety-health-h": "健康上の注意",
+    "safety-scam-h": "詐欺への注意", "safety-emergency-h": "緊急連絡先",
+    "safety-solo-h": "一人旅のヒント", "safety-levels-h": "目的地の安全レベル",
+    "enquiry-label": "お問い合わせ", "enquiry-title": "私たちと一緒に完璧な旅行を計画しましょう",
+    "enquiry-sub": "どこへ行きたいか教えてください。旅行編集部があなたの日程と予算に合わせたパーソナライズガイドをご用意します。",
+    "enquiry-p1": "✓ 24時間以内に返信", "enquiry-p2": "✓ カスタム旅程の提案", "enquiry-p3": "✓ 義務なし、スパムなし",
+    "form-name": "フルネーム", "form-email": "メール", "form-phone": "電話",
+    "form-name-ph": "山田 花子", "form-email-ph": "yamada@email.com", "form-phone-ph": "+65 9123 4567",
+    "form-dest": "興味のある目的地", "form-dest-ph": "目的地を選択",
+    "form-date": "旅行日", "form-travellers": "旅行者数", "form-travellers-ph": "2",
+    "form-message": "メッセージ", "form-message-ph": "旅行プラン、興味、またはご質問をお知らせください...",
+    "btn-send": "お問い合わせ送信",
+    "form-success": "お問い合わせが送信されました！", "form-success-msg": "ありがとうございます！24時間以内にご連絡します。",
+    "footer-tagline": "私たちが行ったから、あなたはどこへ行けばいいかわかる。",
+  },
+
+  ko: {
+    "nav-home": "홈", "nav-guides": "가이드", "nav-cities": "도시",
+    "nav-tools": "여행 도구", "nav-weather": "날씨", "nav-safety": "안전", "nav-enquiry": "문의",
+    "hero-eyebrow": "아시아 최고의 여행 가이드",
+    "hero-headline": "우리가 가봤으니,<br>어디로 갈지 알 수 있어요.",
+    "hero-sub": "실제 가격, 현실적인 일정, 공항 팁, 안전 정보, 날씨 인사이트 및 현지 추천을 포함한 큐레이션된 여행 가이드.",
+    "hero-cta1": "최신 가이드 읽기", "hero-cta2": "문의하기", "hero-scroll": "스크롤하여 탐색",
+    "guides-label": "최신 가이드",
+    "guides-title": "엄선된 목적지,<br>진짜 여행자 인사이트",
+    "guides-sub": "저희 편집자들이 이 목록의 모든 도시를 직접 방문했습니다 — 가격, 일정, 팁은 실제 여행을 기반으로 합니다.",
+    "featured-badge": "편집자 추천",
+    "meta-flight": "SG 출발 항공편", "meta-budget": "일일 예산", "meta-season": "최적 시즌",
+    "btn-read-full": "전체 가이드 읽기",
+    "cities-label": "목적지", "cities-title": "비행 시간이 아깝지 않은 12개 도시",
+    "btn-view-guide": "가이드 보기", "card-flight": "항공편 (SG)", "card-budget": "일일 예산", "card-best": "최적:",
+    "tools-label": "여행 도구", "tools-title": "더 스마트하게 계획하고, 더 잘 여행하세요",
+    "budget-tool-title": "여행 예산 계산기",
+    "budget-tool-desc": "예약 전 SGD로 총 여행 비용을 계산해보세요.",
+    "budget-dest-label": "목적지", "budget-dest-ph": "목적지 선택",
+    "budget-travellers-label": "여행자 수", "budget-travellers-ph": "예: 2",
+    "budget-days-label": "여행 일수", "budget-days-ph": "예: 5",
+    "budget-daily-label": "1인당 일일 예산 (SGD)", "budget-daily-ph": "예: 200",
+    "btn-calculate": "계산하기",
+    "packing-tool-title": "짐 싸기 체크리스트",
+    "packing-tool-desc": "짐을 싸면서 항목을 체크하세요. 진행 상황이 브라우저에 저장됩니다.",
+    "itin-tool-title": "여행 일정 계획",
+    "itin-tool-desc": "일별 여행 계획을 세우고 언제든지 참고하세요.",
+    "itin-day-label": "일", "itin-day-ph": "1", "itin-time-label": "시간",
+    "itin-activity-label": "활동", "itin-activity-ph": "예: 센소지 사원 방문",
+    "itin-notes-label": "메모", "itin-notes-ph": "선택적 메모",
+    "btn-add-entry": "항목 추가", "btn-clear-all": "모두 지우기",
+    "itin-th-day": "일", "itin-th-time": "시간", "itin-th-activity": "활동", "itin-th-notes": "메모",
+    "itin-day-prefix": "Day",
+    "weather-label": "날씨", "weather-title": "비행 전 날씨 예보 확인",
+    "weather-sub": "OpenWeather 제공. 실시간 날씨 조회를 활성화하려면 무료 API 키를 추가하세요.",
+    "weather-city-ph": "도시 이름 입력, 예: 도쿄", "btn-check-weather": "날씨 확인",
+    "weather-humidity": "습도", "weather-wind": "바람", "weather-feels": "체감 온도",
+    "safety-label": "여행 안전", "safety-title": "스마트하게 여행하고, 안전하게 지내세요",
+    "safety-sub": "저희 편집자들이 이 목록의 모든 목적지에 대한 필수 안전 정보를 정리했습니다.",
+    "safety-ins-h": "여행 보험", "safety-health-h": "건강 주의사항",
+    "safety-scam-h": "사기 주의", "safety-emergency-h": "비상 연락처",
+    "safety-solo-h": "혼자 여행 팁", "safety-levels-h": "목적지 안전 등급",
+    "enquiry-label": "문의하기", "enquiry-title": "우리와 함께 완벽한 여행을 계획하세요",
+    "enquiry-sub": "어디로 가고 싶은지 알려주세요. 저희 여행 편집자들이 날짜와 예산에 맞춘 맞춤형 가이드를 준비해 드립니다.",
+    "enquiry-p1": "✓ 24시간 내 응답", "enquiry-p2": "✓ 맞춤 일정 제안", "enquiry-p3": "✓ 의무 없음, 스팸 없음",
+    "form-name": "성명", "form-email": "이메일", "form-phone": "전화",
+    "form-name-ph": "김지수", "form-email-ph": "kim@email.com", "form-phone-ph": "+65 9123 4567",
+    "form-dest": "관심 목적지", "form-dest-ph": "목적지 선택",
+    "form-date": "여행 날짜", "form-travellers": "여행자 수", "form-travellers-ph": "2",
+    "form-message": "메시지", "form-message-ph": "여행 계획, 관심사 또는 질문을 알려주세요...",
+    "btn-send": "문의 보내기",
+    "form-success": "문의가 전송되었습니다!", "form-success-msg": "감사합니다! 24시간 내에 연락드리겠습니다.",
+    "footer-tagline": "우리가 가봤으니, 어디로 갈지 알 수 있어요.",
+  },
+
+  th: {
+    "nav-home": "หน้าแรก", "nav-guides": "คู่มือ", "nav-cities": "เมือง",
+    "nav-tools": "เครื่องมือท่องเที่ยว", "nav-weather": "สภาพอากาศ", "nav-safety": "ความปลอดภัย", "nav-enquiry": "สอบถาม",
+    "hero-eyebrow": "คู่มือท่องเที่ยวชั้นนำของเอเชีย",
+    "hero-headline": "เราไปมาแล้ว เพื่อให้คุณ<br>รู้ว่าควรไปที่ไหน",
+    "hero-sub": "คู่มือท่องเที่ยวที่คัดสรรพร้อมราคาจริง แผนการเดินทางที่ใช้งานได้จริง เคล็ดลับสนามบิน หมายเหตุความปลอดภัย ข้อมูลสภาพอากาศ และคำแนะนำจากคนท้องถิ่น",
+    "hero-cta1": "อ่านคู่มือล่าสุด", "hero-cta2": "ส่งข้อสอบถาม", "hero-scroll": "เลื่อนเพื่อสำรวจ",
+    "guides-label": "คู่มือล่าสุด",
+    "guides-title": "จุดหมายที่คัดสรร<br>ข้อมูลจากนักเดินทางจริง",
+    "guides-sub": "บรรณาธิการของเราได้ไปเยือนทุกเมืองในรายการนี้ด้วยตัวเอง — ราคา แผนการเดินทาง และเคล็ดลับต่างๆ ล้วนมาจากการเดินทางจริง",
+    "featured-badge": "ตัวเลือกบรรณาธิการ",
+    "meta-flight": "เที่ยวบินจาก SG", "meta-budget": "งบประมาณรายวัน", "meta-season": "ฤดูกาลที่ดีที่สุด",
+    "btn-read-full": "อ่านคู่มือฉบับเต็ม",
+    "cities-label": "จุดหมายปลายทาง", "cities-title": "12 เมืองที่คุ้มทุกชั่วโมงของการบิน",
+    "btn-view-guide": "ดูคู่มือ", "card-flight": "เที่ยวบิน (SG)", "card-budget": "งบประมาณรายวัน", "card-best": "ดีที่สุด:",
+    "tools-label": "เครื่องมือท่องเที่ยว", "tools-title": "วางแผนอย่างชาญฉลาด เดินทางได้ดีขึ้น",
+    "budget-tool-title": "เครื่องคำนวณงบประมาณการเดินทาง",
+    "budget-tool-desc": "ประมาณค่าใช้จ่ายทั้งหมดในการเดินทางของคุณเป็น SGD ก่อนการจอง",
+    "budget-dest-label": "จุดหมายปลายทาง", "budget-dest-ph": "เลือกจุดหมายปลายทาง",
+    "budget-travellers-label": "จำนวนนักเดินทาง", "budget-travellers-ph": "เช่น 2",
+    "budget-days-label": "จำนวนวัน", "budget-days-ph": "เช่น 5",
+    "budget-daily-label": "งบประมาณรายวันต่อคน (SGD)", "budget-daily-ph": "เช่น 200",
+    "btn-calculate": "คำนวณ",
+    "packing-tool-title": "รายการตรวจสอบการแพ็คกระเป๋า",
+    "packing-tool-desc": "ทำเครื่องหมายรายการขณะแพ็คกระเป๋า ความคืบหน้าจะถูกบันทึกไว้ในเบราว์เซอร์",
+    "itin-tool-title": "เครื่องมือวางแผนการเดินทาง",
+    "itin-tool-desc": "สร้างแผนการเดินทางรายวันและอ้างอิงได้ทุกเมื่อ",
+    "itin-day-label": "วัน", "itin-day-ph": "1", "itin-time-label": "เวลา",
+    "itin-activity-label": "กิจกรรม", "itin-activity-ph": "เช่น เยี่ยมชมวัดเซ็นโซจิ",
+    "itin-notes-label": "หมายเหตุ", "itin-notes-ph": "หมายเหตุเพิ่มเติม",
+    "btn-add-entry": "เพิ่มรายการ", "btn-clear-all": "ลบทั้งหมด",
+    "itin-th-day": "วัน", "itin-th-time": "เวลา", "itin-th-activity": "กิจกรรม", "itin-th-notes": "หมายเหตุ",
+    "itin-day-prefix": "วันที่",
+    "weather-label": "สภาพอากาศ", "weather-title": "ตรวจสอบพยากรณ์อากาศก่อนบิน",
+    "weather-sub": "ขับเคลื่อนโดย OpenWeather เพิ่ม API Key ฟรีเพื่อเปิดใช้งานการค้นหาสภาพอากาศแบบสด",
+    "weather-city-ph": "ป้อนชื่อเมือง เช่น โตเกียว", "btn-check-weather": "ตรวจสอบสภาพอากาศ",
+    "weather-humidity": "ความชื้น", "weather-wind": "ลม", "weather-feels": "อุณหภูมิที่รู้สึก",
+    "safety-label": "ความปลอดภัยในการเดินทาง", "safety-title": "ท่องเที่ยวอย่างชาญฉลาด ปลอดภัยตลอดการเดินทาง",
+    "safety-sub": "บรรณาธิการของเราได้รวบรวมข้อมูลความปลอดภัยที่จำเป็นสำหรับทุกจุดหมายในรายการนี้",
+    "safety-ins-h": "ประกันการเดินทาง", "safety-health-h": "ข้อควรระวังด้านสุขภาพ",
+    "safety-scam-h": "การตระหนักรู้เรื่องการหลอกลวง", "safety-emergency-h": "หมายเลขฉุกเฉิน",
+    "safety-solo-h": "เคล็ดลับการเดินทางคนเดียว", "safety-levels-h": "ระดับความปลอดภัยของจุดหมาย",
+    "enquiry-label": "ติดต่อเรา", "enquiry-title": "วางแผนการเดินทางที่สมบูรณ์แบบกับเรา",
+    "enquiry-sub": "บอกเราว่าคุณอยากไปที่ไหน บรรณาธิการด้านการท่องเที่ยวของเราจะจัดทำคู่มือเฉพาะบุคคลที่เหมาะกับวันที่และงบประมาณของคุณ",
+    "enquiry-p1": "✓ ตอบกลับภายใน 24 ชั่วโมง", "enquiry-p2": "✓ ข้อเสนอแนะแผนการเดินทางที่กำหนดเอง", "enquiry-p3": "✓ ไม่มีข้อผูกมัด ไม่มีสแปม",
+    "form-name": "ชื่อ-นามสกุล", "form-email": "อีเมล", "form-phone": "โทรศัพท์",
+    "form-name-ph": "สมชาย ใจดี", "form-email-ph": "somchai@email.com", "form-phone-ph": "+65 9123 4567",
+    "form-dest": "จุดหมายปลายทางที่สนใจ", "form-dest-ph": "เลือกจุดหมายปลายทาง",
+    "form-date": "วันที่เดินทาง", "form-travellers": "จำนวนนักเดินทาง", "form-travellers-ph": "2",
+    "form-message": "ข้อความ", "form-message-ph": "บอกเราเกี่ยวกับแผนการเดินทาง ความสนใจ หรือคำถามของคุณ...",
+    "btn-send": "ส่งข้อสอบถาม",
+    "form-success": "ส่งข้อสอบถามแล้ว!", "form-success-msg": "ขอบคุณ! เราจะติดต่อกลับภายใน 24 ชั่วโมง",
+    "footer-tagline": "เราไปมาแล้ว เพื่อให้คุณรู้ว่าควรไปที่ไหน",
+  },
+
+  vi: {
+    "nav-home": "Trang chủ", "nav-guides": "Hướng dẫn", "nav-cities": "Thành phố",
+    "nav-tools": "Công cụ du lịch", "nav-weather": "Thời tiết", "nav-safety": "An toàn", "nav-enquiry": "Hỏi thăm",
+    "hero-eyebrow": "Hướng dẫn du lịch hàng đầu Châu Á",
+    "hero-headline": "Chúng tôi đã đến, để bạn<br>biết nên đi đâu.",
+    "hero-sub": "Hướng dẫn du lịch được tuyển chọn với giá cả thực tế, lịch trình thực tế, mẹo sân bay, ghi chú an toàn, thông tin thời tiết và đề xuất địa phương.",
+    "hero-cta1": "Đọc hướng dẫn mới nhất", "hero-cta2": "Gửi yêu cầu", "hero-scroll": "Cuộn để khám phá",
+    "guides-label": "Hướng dẫn mới nhất",
+    "guides-title": "Điểm đến chọn lọc,<br>góc nhìn thực của du khách",
+    "guides-sub": "Các biên tập viên của chúng tôi đã đến thăm mọi thành phố trong danh sách này — giá cả, lịch trình và mẹo dựa trên các chuyến đi thực tế.",
+    "featured-badge": "Lựa chọn của biên tập viên",
+    "meta-flight": "Chuyến bay từ SG", "meta-budget": "Ngân sách hàng ngày", "meta-season": "Mùa tốt nhất",
+    "btn-read-full": "Đọc hướng dẫn đầy đủ",
+    "cities-label": "Điểm đến", "cities-title": "12 thành phố xứng đáng với mỗi giờ bay",
+    "btn-view-guide": "Xem hướng dẫn", "card-flight": "Chuyến bay (SG)", "card-budget": "Ngân sách hàng ngày", "card-best": "Tốt nhất:",
+    "tools-label": "Công cụ du lịch", "tools-title": "Lập kế hoạch thông minh hơn, du lịch tốt hơn",
+    "budget-tool-title": "Máy tính ngân sách chuyến đi",
+    "budget-tool-desc": "Ước tính tổng chi phí chuyến đi bằng SGD trước khi đặt.",
+    "budget-dest-label": "Điểm đến", "budget-dest-ph": "Chọn điểm đến",
+    "budget-travellers-label": "Số lượng người đi", "budget-travellers-ph": "vd. 2",
+    "budget-days-label": "Số ngày", "budget-days-ph": "vd. 5",
+    "budget-daily-label": "Ngân sách hàng ngày mỗi người (SGD)", "budget-daily-ph": "vd. 200",
+    "btn-calculate": "Tính toán",
+    "packing-tool-title": "Danh sách kiểm tra đồ đạc",
+    "packing-tool-desc": "Đánh dấu các mục khi đóng gói. Tiến trình của bạn được lưu trên trình duyệt.",
+    "itin-tool-title": "Công cụ lập kế hoạch hành trình",
+    "itin-tool-desc": "Lập kế hoạch chuyến đi từng ngày và tham khảo bất cứ lúc nào.",
+    "itin-day-label": "Ngày", "itin-day-ph": "1", "itin-time-label": "Thời gian",
+    "itin-activity-label": "Hoạt động", "itin-activity-ph": "vd. Thăm chùa Senso-ji",
+    "itin-notes-label": "Ghi chú", "itin-notes-ph": "Ghi chú tùy chọn",
+    "btn-add-entry": "Thêm mục", "btn-clear-all": "Xóa tất cả",
+    "itin-th-day": "Ngày", "itin-th-time": "Thời gian", "itin-th-activity": "Hoạt động", "itin-th-notes": "Ghi chú",
+    "itin-day-prefix": "Ngày",
+    "weather-label": "Thời tiết", "weather-title": "Kiểm tra dự báo thời tiết trước khi bay",
+    "weather-sub": "Được cung cấp bởi OpenWeather. Thêm khóa API miễn phí để kích hoạt tra cứu thời tiết trực tiếp.",
+    "weather-city-ph": "Nhập tên thành phố, vd. Tokyo", "btn-check-weather": "Kiểm tra thời tiết",
+    "weather-humidity": "Độ ẩm", "weather-wind": "Gió", "weather-feels": "Cảm giác như",
+    "safety-label": "An toàn du lịch", "safety-title": "Du lịch thông minh, an toàn suốt chuyến đi",
+    "safety-sub": "Các biên tập viên của chúng tôi đã tổng hợp thông tin an toàn thiết yếu cho mọi điểm đến trong danh sách này.",
+    "safety-ins-h": "Bảo hiểm du lịch", "safety-health-h": "Biện pháp phòng ngừa sức khỏe",
+    "safety-scam-h": "Nhận thức về lừa đảo", "safety-emergency-h": "Số khẩn cấp",
+    "safety-solo-h": "Mẹo du lịch một mình", "safety-levels-h": "Mức độ an toàn điểm đến",
+    "enquiry-label": "Liên hệ với chúng tôi", "enquiry-title": "Lập kế hoạch chuyến đi hoàn hảo cùng chúng tôi",
+    "enquiry-sub": "Hãy cho chúng tôi biết bạn muốn đến đâu. Các biên tập viên du lịch của chúng tôi sẽ chuẩn bị hướng dẫn cá nhân hóa phù hợp với ngày tháng và ngân sách của bạn.",
+    "enquiry-p1": "✓ Phản hồi trong 24 giờ", "enquiry-p2": "✓ Đề xuất lịch trình tùy chỉnh", "enquiry-p3": "✓ Không có nghĩa vụ, không có thư rác",
+    "form-name": "Họ và tên", "form-email": "Email", "form-phone": "Điện thoại",
+    "form-name-ph": "Nguyễn Thị Lan", "form-email-ph": "nguyen@email.com", "form-phone-ph": "+65 9123 4567",
+    "form-dest": "Điểm đến quan tâm", "form-dest-ph": "Chọn điểm đến",
+    "form-date": "Ngày du lịch", "form-travellers": "Số lượng người đi", "form-travellers-ph": "2",
+    "form-message": "Tin nhắn", "form-message-ph": "Cho chúng tôi biết về kế hoạch chuyến đi, sở thích hoặc bất kỳ câu hỏi nào...",
+    "btn-send": "Gửi yêu cầu",
+    "form-success": "Yêu cầu đã gửi!", "form-success-msg": "Cảm ơn bạn! Chúng tôi sẽ liên hệ trong 24 giờ.",
+    "footer-tagline": "Chúng tôi đã đến, để bạn biết nên đi đâu.",
+  },
+};
+
+let currentLang = localStorage.getItem("te_lang") || "en";
+
+function t(key) {
+  const langBlock = uiTranslations[currentLang] || uiTranslations.en;
+  return langBlock[key] || uiTranslations.en[key] || key;
+}
+
+function applyTranslations(lang) {
+  currentLang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    const val = t(key);
+    if (val) el.textContent = val;
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const key = el.dataset.i18nHtml;
+    const val = t(key);
+    if (val) el.innerHTML = val;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    const val = t(key);
+    if (val) el.placeholder = val;
+  });
+  document.querySelectorAll("[data-i18n-opt]").forEach(el => {
+    const key = el.dataset.i18nOpt;
+    const val = t(key);
+    if (val) el.textContent = val;
+  });
+  renderCities();
+  renderItin();
+  document.documentElement.lang = lang;
+}
+
+function setLanguage(lang) {
+  if (!SUPPORTED_LANGS.find(l => l.code === lang)) return;
+  localStorage.setItem("te_lang", lang);
+  applyTranslations(lang);
+  const langMeta = SUPPORTED_LANGS.find(l => l.code === lang);
+  document.getElementById("langBtnFlag").textContent = langMeta.flag;
+  document.getElementById("langBtnCode").textContent = langMeta.label;
+  document.querySelectorAll("#langDropdown li").forEach(li => {
+    li.classList.toggle("active", li.dataset.lang === lang);
+  });
+  document.getElementById("langSelector").classList.remove("open");
+}
+
+function initLangSelector() {
+  const selector = document.getElementById("langSelector");
+  const btn = document.getElementById("langBtn");
+  const dropdown = document.getElementById("langDropdown");
+
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    selector.classList.toggle("open");
+  });
+
+  dropdown.querySelectorAll("li").forEach(li => {
+    li.addEventListener("click", () => setLanguage(li.dataset.lang));
+  });
+
+  document.addEventListener("click", e => {
+    if (!selector.contains(e.target)) selector.classList.remove("open");
+  });
+
+  setLanguage(currentLang);
+}
+
+/* ============================================================
    NAVBAR — scroll effect & hamburger
    ============================================================ */
 const navbar = document.getElementById("navbar");
@@ -333,7 +745,7 @@ function renderCities() {
     <div class="city-card reveal" style="transition-delay:${(i % 3) * 0.1}s">
       <div class="city-card-img">
         <img src="${d.image}" alt="${d.name}" loading="lazy" />
-        <div class="city-season-badge">Best: ${d.bestSeason}</div>
+        <div class="city-season-badge">${t("card-best")} ${d.bestSeason}</div>
       </div>
       <div class="city-card-body">
         <div class="city-name-row">
@@ -344,17 +756,17 @@ function renderCities() {
         <p class="city-desc">${d.description}</p>
         <div class="city-meta">
           <div class="city-meta-item">
-            <span class="city-meta-label">Flight (SG)</span>
+            <span class="city-meta-label">${t("card-flight")}</span>
             <span class="city-meta-val">${d.flightTime}</span>
           </div>
           <div class="city-meta-item">
-            <span class="city-meta-label">Daily Budget</span>
+            <span class="city-meta-label">${t("card-budget")}</span>
             <span class="city-meta-val">${d.dailyBudget}</span>
           </div>
         </div>
       </div>
       <div class="city-card-footer">
-        <button class="btn btn-primary" onclick="openModal('${d.id}')">View Guide</button>
+        <button class="btn btn-primary" onclick="openModal('${d.id}')">${t("btn-view-guide")}</button>
       </div>
     </div>
   `).join("");
@@ -554,7 +966,7 @@ function renderItin() {
   const sorted = [...itinEntries].sort((a, b) => a.day - b.day || a.time.localeCompare(b.time));
   tbody.innerHTML = sorted.map((e, i) => `
     <tr>
-      <td><strong>Day ${e.day}</strong></td>
+      <td><strong>${t("itin-day-prefix")} ${e.day}</strong></td>
       <td>${e.time || "—"}</td>
       <td>${escapeHtml(e.activity)}</td>
       <td style="color:#6b6b6b">${escapeHtml(e.notes)}</td>
@@ -746,7 +1158,7 @@ function escapeHtml(str) {
    INIT
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
-  renderCities();
+  initLangSelector();
   renderChecklist();
   renderItin();
   initReveal();

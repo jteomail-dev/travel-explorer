@@ -26,6 +26,7 @@ npx http-server . -p 3000 -o
 - **Packing Checklist** — 5 categories, 40+ items, progress tracker — saved in browser localStorage
 - **Itinerary Planner** — Add, sort, and remove day-by-day activities — saved in browser localStorage
 - **Weather Widget** — Live weather lookup via OpenWeather API (free API key required)
+- **Multi-Language UI** — Language selector in navbar with auto-translation into 中文, 日本語, 한국어, ไทย, Tiếng Việt — persists across reloads
 - **Enquiry Form** — Validated contact form with localStorage submission storage
 - **Responsive Design** — Mobile, tablet, and desktop layouts
 - **Backpacker Adventure Design** — Bebas Neue + DM Mono + Barlow typography, aged parchment palette, corkboard card tilts, film-grain hero, topo-map texture

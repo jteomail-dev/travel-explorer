@@ -15,18 +15,37 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">Travel Explorer</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#guides">Guides</a></li>
-        <li><a href="#cities">Cities</a></li>
-        <li><a href="#tools">Travel Tools</a></li>
-        <li><a href="#weather">Weather</a></li>
-        <li><a href="#safety">Safety</a></li>
-        <li><a href="#enquiry">Enquiry</a></li>
+        <li><a href="#home" data-i18n="nav-home">Home</a></li>
+        <li><a href="#guides" data-i18n="nav-guides">Guides</a></li>
+        <li><a href="#cities" data-i18n="nav-cities">Cities</a></li>
+        <li><a href="#tools" data-i18n="nav-tools">Travel Tools</a></li>
+        <li><a href="#weather" data-i18n="nav-weather">Weather</a></li>
+        <li><a href="#safety" data-i18n="nav-safety">Safety</a></li>
+        <li><a href="#enquiry" data-i18n="nav-enquiry">Enquiry</a></li>
       </ul>
+      <div class="nav-right">
+        <div class="lang-selector" id="langSelector">
+          <button class="lang-btn" id="langBtn" aria-label="Select language">
+            <span class="lang-btn-flag" id="langBtnFlag">🇬🇧</span>
+            <span class="lang-btn-code" id="langBtnCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-dropdown" id="langDropdown">
+            <li data-lang="en" data-flag="🇬🇧" data-label="EN"><span class="lang-flag">🇬🇧</span>English</li>
+            <li data-lang="zh" data-flag="🇨🇳" data-label="ZH"><span class="lang-flag">🇨🇳</span>中文</li>
+            <li data-lang="ja" data-flag="🇯🇵" data-label="JA"><span class="lang-flag">🇯🇵</span>日本語</li>
+            <li data-lang="ko" data-flag="🇰🇷" data-label="KO"><span class="lang-flag">🇰🇷</span>한국어</li>
+            <li data-lang="th" data-flag="🇹🇭" data-label="TH"><span class="lang-flag">🇹🇭</span>ไทย</li>
+            <li data-lang="vi" data-flag="🇻🇳" data-label="VI"><span class="lang-flag">🇻🇳</span>Tiếng Việt</li>
+          </ul>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -37,16 +56,16 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Asia's Premier Travel Guide</p>
-      <h1 class="hero-headline">We went, so you know<br>where to go.</h1>
-      <p class="hero-sub">Curated travel guides with real prices, realistic itineraries, airport tips, safety notes, weather insights, and local recommendations.</p>
+      <p class="hero-eyebrow" data-i18n="hero-eyebrow">Asia's Premier Travel Guide</p>
+      <h1 class="hero-headline" data-i18n-html="hero-headline">We went, so you know<br>where to go.</h1>
+      <p class="hero-sub" data-i18n="hero-sub">Curated travel guides with real prices, realistic itineraries, airport tips, safety notes, weather insights, and local recommendations.</p>
       <div class="hero-ctas">
-        <a href="#guides" class="btn btn-primary">Read Latest Guide</a>
-        <a href="#enquiry" class="btn btn-outline">Send Enquiry</a>
+        <a href="#guides" class="btn btn-primary" data-i18n="hero-cta1">Read Latest Guide</a>
+        <a href="#enquiry" class="btn btn-outline" data-i18n="hero-cta2">Send Enquiry</a>
       </div>
     </div>
     <div class="hero-scroll-hint">
-      <span>Scroll to explore</span>
+      <span data-i18n="hero-scroll">Scroll to explore</span>
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -55,26 +74,26 @@
   <section id="guides" class="section guides-section">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Latest Guides</p>
-        <h2 class="section-title">Hand-picked destinations,<br>real traveller insights</h2>
-        <p class="section-sub">Our editors have visited every city on this list — prices, itineraries, and tips are based on actual trips.</p>
+        <p class="section-label" data-i18n="guides-label">Latest Guides</p>
+        <h2 class="section-title" data-i18n-html="guides-title">Hand-picked destinations,<br>real traveller insights</h2>
+        <p class="section-sub" data-i18n="guides-sub">Our editors have visited every city on this list — prices, itineraries, and tips are based on actual trips.</p>
       </div>
 
       <div class="featured-guide reveal">
         <div class="featured-guide-img">
           <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80" alt="Tokyo" />
-          <div class="featured-badge">Editor's Pick</div>
+          <div class="featured-badge" data-i18n="featured-badge">Editor's Pick</div>
         </div>
         <div class="featured-guide-content">
           <p class="featured-label">Japan &nbsp;·&nbsp; 🇯🇵</p>
           <h3 class="featured-title">Tokyo: The City That Never Stops Surprising</h3>
           <p class="featured-desc">From the neon corridors of Shinjuku to the serene bamboo groves of Arashiyama — Tokyo is a city that rewards every kind of traveller. Here's our complete 7-day breakdown.</p>
           <ul class="featured-meta">
-            <li><span class="meta-label">Flight from SG</span><span class="meta-val">~7 hrs</span></li>
-            <li><span class="meta-label">Daily Budget</span><span class="meta-val">SGD 150–250</span></li>
-            <li><span class="meta-label">Best Season</span><span class="meta-val">Mar–May, Oct–Nov</span></li>
+            <li><span class="meta-label" data-i18n="meta-flight">Flight from SG</span><span class="meta-val">~7 hrs</span></li>
+            <li><span class="meta-label" data-i18n="meta-budget">Daily Budget</span><span class="meta-val">SGD 150–250</span></li>
+            <li><span class="meta-label" data-i18n="meta-season">Best Season</span><span class="meta-val">Mar–May, Oct–Nov</span></li>
           </ul>
-          <button class="btn btn-primary" onclick="openModal('tokyo')">Read Full Guide</button>
+          <button class="btn btn-primary" onclick="openModal('tokyo')" data-i18n="btn-read-full">Read Full Guide</button>
         </div>
       </div>
     </div>
@@ -84,8 +103,8 @@
   <section id="cities" class="section cities-section">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Destinations</p>
-        <h2 class="section-title">12 Cities Worth Every Hour of the Flight</h2>
+        <p class="section-label" data-i18n="cities-label">Destinations</p>
+        <h2 class="section-title" data-i18n="cities-title">12 Cities Worth Every Hour of the Flight</h2>
       </div>
       <div class="cities-grid" id="citiesGrid">
         <!-- Cards injected by JS -->
@@ -115,20 +134,20 @@
   <section id="tools" class="section tools-section">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Travel Tools</p>
-        <h2 class="section-title">Plan smarter, travel better</h2>
+        <p class="section-label" data-i18n="tools-label">Travel Tools</p>
+        <h2 class="section-title" data-i18n="tools-title">Plan smarter, travel better</h2>
       </div>
       <div class="tools-grid">
 
         <!-- Tool 1: Budget Calculator -->
         <div class="tool-card reveal">
           <div class="tool-icon">💰</div>
-          <h3 class="tool-title">Trip Budget Calculator</h3>
-          <p class="tool-desc">Estimate your total trip cost in SGD before you book.</p>
+          <h3 class="tool-title" data-i18n="budget-tool-title">Trip Budget Calculator</h3>
+          <p class="tool-desc" data-i18n="budget-tool-desc">Estimate your total trip cost in SGD before you book.</p>
           <div class="tool-form">
-            <label>Destination
+            <label><span data-i18n="budget-dest-label">Destination</span>
               <select id="bc-dest">
-                <option value="">Select destination</option>
+                <option value="" data-i18n-opt="budget-dest-ph">Select destination</option>
                 <option value="tokyo">Tokyo, Japan</option>
                 <option value="seoul">Seoul, South Korea</option>
                 <option value="bali">Bali, Indonesia</option>
@@ -143,16 +162,16 @@
                 <option value="hanoi">Hanoi, Vietnam</option>
               </select>
             </label>
-            <label>Number of Travellers
-              <input type="number" id="bc-travellers" min="1" max="20" placeholder="e.g. 2" />
+            <label><span data-i18n="budget-travellers-label">Number of Travellers</span>
+              <input type="number" id="bc-travellers" min="1" max="20" placeholder="e.g. 2" data-i18n-placeholder="budget-travellers-ph" />
             </label>
-            <label>Number of Days
-              <input type="number" id="bc-days" min="1" max="60" placeholder="e.g. 5" />
+            <label><span data-i18n="budget-days-label">Number of Days</span>
+              <input type="number" id="bc-days" min="1" max="60" placeholder="e.g. 5" data-i18n-placeholder="budget-days-ph" />
             </label>
-            <label>Daily Budget per Person (SGD)
-              <input type="number" id="bc-budget" min="1" placeholder="e.g. 200" />
+            <label><span data-i18n="budget-daily-label">Daily Budget per Person (SGD)</span>
+              <input type="number" id="bc-budget" min="1" placeholder="e.g. 200" data-i18n-placeholder="budget-daily-ph" />
             </label>
-            <button class="btn btn-primary btn-full" onclick="calcBudget()">Calculate</button>
+            <button class="btn btn-primary btn-full" onclick="calcBudget()" data-i18n="btn-calculate">Calculate</button>
             <div class="tool-result" id="bc-result" hidden>
               <div class="result-main" id="bc-total"></div>
               <div class="result-breakdown" id="bc-breakdown"></div>
@@ -163,8 +182,8 @@
         <!-- Tool 2: Packing Checklist -->
         <div class="tool-card reveal">
           <div class="tool-icon">🧳</div>
-          <h3 class="tool-title">Packing Checklist</h3>
-          <p class="tool-desc">Tick off items as you pack. Your progress is saved in the browser.</p>
+          <h3 class="tool-title" data-i18n="packing-tool-title">Packing Checklist</h3>
+          <p class="tool-desc" data-i18n="packing-tool-desc">Tick off items as you pack. Your progress is saved in the browser.</p>
           <div class="checklist-progress-wrap">
             <div class="checklist-progress-bar">
               <div class="checklist-progress-fill" id="checklistFill"></div>
@@ -179,32 +198,32 @@
         <!-- Tool 3: Itinerary Planner -->
         <div class="tool-card reveal">
           <div class="tool-icon">📅</div>
-          <h3 class="tool-title">Itinerary Planner</h3>
-          <p class="tool-desc">Build your day-by-day trip plan and reference it anytime.</p>
+          <h3 class="tool-title" data-i18n="itin-tool-title">Itinerary Planner</h3>
+          <p class="tool-desc" data-i18n="itin-tool-desc">Build your day-by-day trip plan and reference it anytime.</p>
           <div class="tool-form">
             <div class="itinerary-row">
-              <label>Day
-                <input type="number" id="itin-day" min="1" max="30" placeholder="1" />
+              <label><span data-i18n="itin-day-label">Day</span>
+                <input type="number" id="itin-day" min="1" max="30" placeholder="1" data-i18n-placeholder="itin-day-ph" />
               </label>
-              <label>Time
+              <label><span data-i18n="itin-time-label">Time</span>
                 <input type="time" id="itin-time" />
               </label>
             </div>
-            <label>Activity
-              <input type="text" id="itin-activity" placeholder="e.g. Visit Senso-ji Temple" />
+            <label><span data-i18n="itin-activity-label">Activity</span>
+              <input type="text" id="itin-activity" placeholder="e.g. Visit Senso-ji Temple" data-i18n-placeholder="itin-activity-ph" />
             </label>
-            <label>Notes
-              <input type="text" id="itin-notes" placeholder="Optional notes" />
+            <label><span data-i18n="itin-notes-label">Notes</span>
+              <input type="text" id="itin-notes" placeholder="Optional notes" data-i18n-placeholder="itin-notes-ph" />
             </label>
             <div class="itinerary-btns">
-              <button class="btn btn-primary" onclick="addItinEntry()">Add Entry</button>
-              <button class="btn btn-ghost" onclick="clearItin()">Clear All</button>
+              <button class="btn btn-primary" onclick="addItinEntry()" data-i18n="btn-add-entry">Add Entry</button>
+              <button class="btn btn-ghost" onclick="clearItin()" data-i18n="btn-clear-all">Clear All</button>
             </div>
           </div>
           <div class="itin-table-wrap" id="itinTableWrap" hidden>
             <table class="itin-table" id="itinTable">
               <thead>
-                <tr><th>Day</th><th>Time</th><th>Activity</th><th>Notes</th><th></th></tr>
+                <tr><th data-i18n="itin-th-day">Day</th><th data-i18n="itin-th-time">Time</th><th data-i18n="itin-th-activity">Activity</th><th data-i18n="itin-th-notes">Notes</th><th></th></tr>
               </thead>
               <tbody id="itinBody"></tbody>
             </table>
@@ -219,14 +238,14 @@
   <section id="weather" class="section weather-section">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Weather</p>
-        <h2 class="section-title">Check the forecast before you fly</h2>
-        <p class="section-sub">Powered by OpenWeather. Add your free API key to activate live weather lookups.</p>
+        <p class="section-label" data-i18n="weather-label">Weather</p>
+        <h2 class="section-title" data-i18n="weather-title">Check the forecast before you fly</h2>
+        <p class="section-sub" data-i18n="weather-sub">Powered by OpenWeather. Add your free API key to activate live weather lookups.</p>
       </div>
       <div class="weather-widget reveal">
         <div class="weather-input-row">
-          <input type="text" id="weather-city" placeholder="Enter city name, e.g. Tokyo" class="weather-input" />
-          <button class="btn btn-primary" onclick="checkWeather()">Check Weather</button>
+          <input type="text" id="weather-city" placeholder="Enter city name, e.g. Tokyo" class="weather-input" data-i18n-placeholder="weather-city-ph" />
+          <button class="btn btn-primary" onclick="checkWeather()" data-i18n="btn-check-weather">Check Weather</button>
         </div>
         <div id="weather-result" class="weather-result" hidden>
           <div class="weather-card">
@@ -238,9 +257,9 @@
             <div class="weather-right">
               <img id="w-icon" src="" alt="" class="weather-icon" />
               <div class="weather-details">
-                <div><span>Humidity</span><strong id="w-humidity"></strong></div>
-                <div><span>Wind</span><strong id="w-wind"></strong></div>
-                <div><span>Feels like</span><strong id="w-feels"></strong></div>
+                <div><span data-i18n="weather-humidity">Humidity</span><strong id="w-humidity"></strong></div>
+                <div><span data-i18n="weather-wind">Wind</span><strong id="w-wind"></strong></div>
+                <div><span data-i18n="weather-feels">Feels like</span><strong id="w-feels"></strong></div>
               </div>
             </div>
           </div>
@@ -257,34 +276,34 @@
   <section id="safety" class="section safety-section">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Travel Safety</p>
-        <h2 class="section-title">Travel smart, stay safe</h2>
-        <p class="section-sub">Our editors have compiled essential safety information for every destination on this list.</p>
+        <p class="section-label" data-i18n="safety-label">Travel Safety</p>
+        <h2 class="section-title" data-i18n="safety-title">Travel smart, stay safe</h2>
+        <p class="section-sub" data-i18n="safety-sub">Our editors have compiled essential safety information for every destination on this list.</p>
       </div>
 
       <div class="safety-grid">
 
         <div class="safety-card reveal">
           <div class="safety-icon">🛡️</div>
-          <h4>Travel Insurance</h4>
+          <h4 data-i18n="safety-ins-h">Travel Insurance</h4>
           <p>Never travel without comprehensive coverage. Ensure your policy includes medical evacuation, trip cancellation, and lost baggage. Compare policies on platforms like MoneySmart before you book.</p>
         </div>
 
         <div class="safety-card reveal">
           <div class="safety-icon">💉</div>
-          <h4>Health Precautions</h4>
+          <h4 data-i18n="safety-health-h">Health Precautions</h4>
           <p>Check with your GP 6–8 weeks before departure. Hep A, Typhoid, and Rabies vaccines are recommended for rural Southeast Asia. Carry a basic medical kit with antihistamines, rehydration salts, and diarrhoea medication.</p>
         </div>
 
         <div class="safety-card reveal">
           <div class="safety-icon">🚨</div>
-          <h4>Scam Awareness</h4>
+          <h4 data-i18n="safety-scam-h">Scam Awareness</h4>
           <p>Common scams in tourist areas include gem scams (Bangkok), taxi overcharging (Bali, Hanoi), and "closed temple" redirects. Always use metered taxis or ride-hailing apps. Book tours through your hotel.</p>
         </div>
 
         <div class="safety-card reveal">
           <div class="safety-icon">📞</div>
-          <h4>Emergency Numbers</h4>
+          <h4 data-i18n="safety-emergency-h">Emergency Numbers</h4>
           <div class="emergency-table">
             <div class="em-row"><span>Japan</span><span>110 (Police) · 119 (Ambulance)</span></div>
             <div class="em-row"><span>Thailand</span><span>191 (Police) · 1669 (Ambulance)</span></div>
@@ -298,13 +317,13 @@
 
         <div class="safety-card reveal">
           <div class="safety-icon">👤</div>
-          <h4>Solo Travel Tips</h4>
+          <h4 data-i18n="safety-solo-h">Solo Travel Tips</h4>
           <p>Share your itinerary with someone at home. Stay in well-reviewed hostels or hotels. Use digital copies of your passport. Avoid isolated areas at night. Download offline maps before you land.</p>
         </div>
 
         <div class="safety-card reveal">
           <div class="safety-icon">🌏</div>
-          <h4>Destination Safety Levels</h4>
+          <h4 data-i18n="safety-levels-h">Destination Safety Levels</h4>
           <div class="safety-levels">
             <div class="sl-row sl-green"><span class="sl-dot"></span><span>Tokyo · Seoul · Singapore · Sydney · Taipei</span><span class="sl-label">Low Risk</span></div>
             <div class="sl-row sl-yellow"><span class="sl-dot"></span><span>Bangkok · Kuala Lumpur · Hong Kong · Phuket</span><span class="sl-label">Moderate</span></div>
@@ -321,13 +340,13 @@
     <div class="container">
       <div class="enquiry-inner">
         <div class="enquiry-left reveal">
-          <p class="section-label">Get in Touch</p>
-          <h2 class="section-title">Plan your perfect trip with us</h2>
-          <p class="section-sub">Tell us where you want to go. Our travel editors will put together a personalised guide tailored to your dates and budget.</p>
+          <p class="section-label" data-i18n="enquiry-label">Get in Touch</p>
+          <h2 class="section-title" data-i18n="enquiry-title">Plan your perfect trip with us</h2>
+          <p class="section-sub" data-i18n="enquiry-sub">Tell us where you want to go. Our travel editors will put together a personalised guide tailored to your dates and budget.</p>
           <ul class="enquiry-promises">
-            <li>✓ Response within 24 hours</li>
-            <li>✓ Custom itinerary suggestions</li>
-            <li>✓ No obligation, no spam</li>
+            <li data-i18n="enquiry-p1">✓ Response within 24 hours</li>
+            <li data-i18n="enquiry-p2">✓ Custom itinerary suggestions</li>
+            <li data-i18n="enquiry-p3">✓ No obligation, no spam</li>
           </ul>
         </div>
         <div class="enquiry-right reveal">
@@ -335,31 +354,31 @@
             <div id="form-success" class="form-success" hidden>
               <span class="success-icon">✓</span>
               <div>
-                <strong>Enquiry sent!</strong>
-                <p>Thank you! We'll be in touch within 24 hours.</p>
+                <strong data-i18n="form-success">Enquiry sent!</strong>
+                <p data-i18n="form-success-msg">Thank you! We'll be in touch within 24 hours.</p>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="f-name">Full Name <span class="req">*</span></label>
-                <input type="text" id="f-name" name="name" placeholder="Jane Smith" />
+                <label for="f-name"><span data-i18n="form-name">Full Name</span> <span class="req">*</span></label>
+                <input type="text" id="f-name" name="name" placeholder="Jane Smith" data-i18n-placeholder="form-name-ph" />
                 <span class="field-error" id="err-name"></span>
               </div>
               <div class="form-group">
-                <label for="f-email">Email <span class="req">*</span></label>
-                <input type="email" id="f-email" name="email" placeholder="jane@email.com" />
+                <label for="f-email"><span data-i18n="form-email">Email</span> <span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" placeholder="jane@email.com" data-i18n-placeholder="form-email-ph" />
                 <span class="field-error" id="err-email"></span>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="f-phone">Phone</label>
-                <input type="tel" id="f-phone" name="phone" placeholder="+65 9123 4567" />
+                <label for="f-phone" data-i18n="form-phone">Phone</label>
+                <input type="tel" id="f-phone" name="phone" placeholder="+65 9123 4567" data-i18n-placeholder="form-phone-ph" />
               </div>
               <div class="form-group">
-                <label for="f-dest">Destination of Interest <span class="req">*</span></label>
+                <label for="f-dest"><span data-i18n="form-dest">Destination of Interest</span> <span class="req">*</span></label>
                 <select id="f-dest" name="destination">
-                  <option value="">Select a destination</option>
+                  <option value="" data-i18n-opt="form-dest-ph">Select a destination</option>
                   <option>Tokyo, Japan</option>
                   <option>Seoul, South Korea</option>
                   <option>Bali, Indonesia</option>
@@ -378,21 +397,21 @@
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="f-date">Travel Date <span class="req">*</span></label>
+                <label for="f-date"><span data-i18n="form-date">Travel Date</span> <span class="req">*</span></label>
                 <input type="date" id="f-date" name="travelDate" />
                 <span class="field-error" id="err-date"></span>
               </div>
               <div class="form-group">
-                <label for="f-travellers">Number of Travellers <span class="req">*</span></label>
-                <input type="number" id="f-travellers" name="travellers" min="1" max="50" placeholder="2" />
+                <label for="f-travellers"><span data-i18n="form-travellers">Number of Travellers</span> <span class="req">*</span></label>
+                <input type="number" id="f-travellers" name="travellers" min="1" max="50" placeholder="2" data-i18n-placeholder="form-travellers-ph" />
                 <span class="field-error" id="err-travellers"></span>
               </div>
             </div>
             <div class="form-group">
-              <label for="f-message">Message</label>
-              <textarea id="f-message" name="message" rows="4" placeholder="Tell us about your trip plans, interests, or any questions..."></textarea>
+              <label for="f-message" data-i18n="form-message">Message</label>
+              <textarea id="f-message" name="message" rows="4" placeholder="Tell us about your trip plans, interests, or any questions..." data-i18n-placeholder="form-message-ph"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Enquiry</button>
+            <button type="submit" class="btn btn-primary btn-full" data-i18n="btn-send">Send Enquiry</button>
           </form>
         </div>
       </div>
@@ -405,16 +424,16 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <p class="footer-logo">Travel Explorer</p>
-          <p class="footer-tagline">We went, so you know where to go.</p>
+          <p class="footer-tagline" data-i18n="footer-tagline">We went, so you know where to go.</p>
         </div>
         <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#guides">Guides</a>
-          <a href="#cities">Cities</a>
-          <a href="#tools">Travel Tools</a>
-          <a href="#weather">Weather</a>
-          <a href="#safety">Safety</a>
-          <a href="#enquiry">Enquiry</a>
+          <a href="#home" data-i18n="nav-home">Home</a>
+          <a href="#guides" data-i18n="nav-guides">Guides</a>
+          <a href="#cities" data-i18n="nav-cities">Cities</a>
+          <a href="#tools" data-i18n="nav-tools">Travel Tools</a>
+          <a href="#weather" data-i18n="nav-weather">Weather</a>
+          <a href="#safety" data-i18n="nav-safety">Safety</a>
+          <a href="#enquiry" data-i18n="nav-enquiry">Enquiry</a>
         </div>
       </div>
       <p class="footer-copy">&copy; 2026 Travel Explorer. All rights reserved. Images courtesy of Unsplash.</p>
